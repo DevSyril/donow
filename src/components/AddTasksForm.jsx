@@ -1,19 +1,45 @@
 import React from 'react'
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog"
 import { Input } from './ui/input'
 
-export const AddTasksForm = () => {
+export const AddTasksForm = ({ launcher }) => {
   return (
     <div>
-        <h2>Enregistrer un nouvelle tâche</h2>
-        <form action="">
+      <AlertDialog>
+        <AlertDialogTrigger> {launcher} </AlertDialogTrigger>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle className="text-2xl font-bold">Enregistrer une nouvelle tâche</AlertDialogTitle>
+            <AlertDialogDescription>
+              Remplissez le formulaire suivant pour plannifier une nuvelle tâche !
+            </AlertDialogDescription>
+          </AlertDialogHeader>
 
-          <div className="">
-            <label htmlFor=""></label>
-            <Input />
-          </div>
+          <form action="">
+            <div className="">
+              <label htmlFor="title" className='font-medium text-xl'>Titre de la tâche</label>
+              <Input type="text"/>
+            </div>
+          </form>
 
-        </form>
-  
+          <AlertDialogFooter>
+            <AlertDialogCancel>Annuler</AlertDialogCancel>
+            <AlertDialogAction>Créer</AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
+
+
     </div>
   )
 }

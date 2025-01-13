@@ -28,6 +28,7 @@ export const TasksCompleted = () => {
                     </div>
                 } />
 
+
             </div>
 
             <div className="" style={{
@@ -43,18 +44,6 @@ export const TasksCompleted = () => {
                                 <h4 className='font-bold text-xl'> {task.title} </h4>
 
                                 <div className="flex items-center gap-3">
-
-                                    <TaskUpdate
-                                        launcher={
-                                            <div className="hover:bg-blue-400 hover:px-2 hover:py-2 hover:rounded-full transition-all cursor-pointer">
-                                                <FaPenToSquare className='text-xl hover:text-white' />
-                                            </div>
-                                        }
-                                        name={task.title}
-                                        description={task.description}
-                                        date={task.dueDate}
-                                    />
-
 
                                     <Sheet>
                                         <SheetTrigger>
@@ -73,27 +62,17 @@ export const TasksCompleted = () => {
                                         </SheetContent>
                                     </Sheet>
 
-
+                                    <Confirmation
+                                        title={<div className='bg-red-500 rounded-full px-3 py-3 hover:opacity-80 transition-all'>
+                                            <FaTrash className='text-white' />
+                                        </div>}
+                                        question={"Etes-vous sûr de vouloir supprimer cette tâche ?"}
+                                        advertise={`Cette action ne peut pas être annulée. Cela supprimera définitivement la tâche "${task.title}"`}
+                                    />
                                 </div>
                             </div>
                             <p> {task.dueDate.toDateString()} </p>
                             <p> {task.description} </p>
-                        </div>
-
-                        <div className="w-full flex justify-between">
-                            <div className="flex items-center gap-2">
-                                <Checkbox />
-                                Terminer la tâche
-                            </div>
-
-                            <Confirmation
-                                title={<div className='bg-red-500 rounded-full px-3 py-3 hover:opacity-80 transition-all'>
-                                    <FaTrash className='text-white' />
-                                </div>}
-                                question={"Etes-vous sûr de vouloir supprimer cette tâche ?"}
-                                advertise={`Cette action ne peut pas être annulée. Cela supprimera définitivement la tâche "${task.title}"`}
-                            />
-
                         </div>
                     </div>
                 ))}

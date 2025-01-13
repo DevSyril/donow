@@ -15,12 +15,12 @@ import { Confirmation } from './Confirmation';
 import { AddTasksForm } from './AddTasksForm';
 import { TaskUpdate } from './TaskUpdate';
 
-export default function TasksList() {
+export const TasksCompleted = () => {
     return (
         <div className='flex flex-col gap-8'>
 
             <div className="flex justify-between items-center">
-                <h2 className="font-bold text-3xl">Liste des tâches</h2>
+                <h2 className="font-bold text-3xl">Tâches complétées</h2>
 
                 <AddTasksForm launcher={
                     <div className='flex items-center justify-between px-2 py-2 bg-blue-600 text-white gap-2 rounded-xl hover:opacity-80 transition-all'>

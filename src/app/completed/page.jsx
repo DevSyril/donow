@@ -1,7 +1,10 @@
+import { TasksCompleted } from '@/components/TasksCompleted'
 import React from 'react'
 
 export default function Completed() {
   return (
-    <div>page</div>
+    <div className='mt-4'>
+      <TasksCompleted />
+    </div>
   )
 }
